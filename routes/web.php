@@ -12,13 +12,6 @@
 */
 
 Route::get('/', function () {
-  //
-});
-
-Route::post('/task-submit', function (Request $request) {
-  //
-});
-
-Route::delete('/delete-task/{id}', function ($id) {
-  //
+  $categories = App\Category::visible();
+  return view('welcome', compact('categories'));
 });
