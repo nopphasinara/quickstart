@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
-  $categories = App\Category::visible();
-  return view('welcome', compact('categories'));
+  // $categories = App\Category::visible();
+  // return view('welcome', compact('categories'));
+  return view('welcome');
 });

@@ -1,1 +1,1 @@
-<pre><?php print_r($categories); ?></pre>
+xxx
