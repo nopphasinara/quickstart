@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
+    if (App::environment(['local', 'staging'])) {
+        // The environment is either local OR staging...
+    }
+    
     return view('welcome');
 });
