@@ -1,35 +1,15 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laravel</title>
-</head>
-<body>
-  <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-      <div class="top-right links">
-        @auth
-          <a href="{{ url('/home') }}">Home</a>
-        @else
-          <a href="{{ route('login') }}">Login</a>
-          <a href="{{ route('register') }}">Register</a>
-        @endauth
-      </div>
-    @endif
+@extends('layouts.app')
 
-    <div class="content">
-      <div class="title m-b-md">
-        Laravel
-      </div>
+@section('content')
+  <div class="container">
+    <div class="row">
+      <h1>Listing Types</h1>
 
-      <div class="links">
-        @foreach ($listingTypes as $listingType)
-          <a href="{{ $listingType->slug }}">{{ $listingType->name }}</a>
+      <ul class="list-unstyled">
+        @foreach ($listingTypes as $index => $listingType)
+          <li><a href="{!! $listingType->slug !!}">{!! $listingType->name !!}</a></li>
         @endforeach
-      </div>
+      </ul>
     </div>
   </div>
-</body>
-</html>
+@endsection
