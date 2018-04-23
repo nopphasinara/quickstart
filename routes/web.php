@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +18,33 @@ Route::get('/', function () {
         // The environment is either local OR staging...
     }
 
-    return view('welcome');
+    $listingTypes = \App\ListingType::all();
+
+    return view('welcome', [
+      'listingTypes' => $listingTypes,
+    ]);
 });
+
+Route::get('/submit', function () {
+    return view('submit');
+});
+
+Route::post('/submit', function (Request $request) {
+    $input = $request->all();
+    if (!$input['slug']) $input['slug'] = str_slug($input['name']);
+
+    $request->replace($input);
+    $data = $request->validate([
+        'name' => 'required',
+        'slug' => 'required|unique:listing_types',
+        'description' => '',
+    ]);
+
+    $listingType = tap(new \App\ListingType($data))->save();
+
+    return redirect('/');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
