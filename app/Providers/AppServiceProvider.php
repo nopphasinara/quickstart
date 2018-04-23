@@ -13,10 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-        $this->app->bind('operation', function() {
-            return new Operation();
-        });
+        // $this->app->bind('operation', function() {
+        //     return new Operation();
+        // });
     }
 
     /**
