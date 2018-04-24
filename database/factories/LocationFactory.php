@@ -7,9 +7,9 @@ $factory->define(App\Location::class, function (Faker $faker) {
     $slug = str_slug($name);
 
     return [
-        'name' => $name,
-        'slug' => $slug,
-        'image' => $faker->image(public_path('uploads/locations/'), $width = 300, $height = 300, $category = 'city', $fullPath = false, $randomize = true, $word = null),
+        'name' => $faker->state,
+        'slug' => $faker->slug,
+        'image' => $faker->image(public_path('uploads/locations/'), $width = 320, $height = 282, $category = 'city', $fullPath = false, $word = null),
         'description' => $faker->paragraph,
     ];
 });
