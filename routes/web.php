@@ -26,6 +26,10 @@ Route::get('/', function () {
 });
 
 Route::get('/submit', function () {
+    $user = Auth::check();
+    if (!$user) {
+      return redirect('login/');
+    }
     return view('submit');
 });
 
@@ -33,8 +37,7 @@ Route::post('/submit', function (Request $request) {
     $input = $request->all();
     if (!$input['slug']) $input['slug'] = str_slug($input['name']);
 
-    $request->replace($input);
-    $data = $request->validate([
+    $data = $request->replace($input)->validate([
         'name' => 'required',
         'slug' => 'required|unique:listing_types',
         'description' => '',
