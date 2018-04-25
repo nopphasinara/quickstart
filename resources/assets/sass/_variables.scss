@@ -1,16 +1,26 @@
 // main: ./app.scss
 
 // Body
-$body-bg: #fff;
+$body-bg:                  #fff;
 
 // Brands
-$brand-primary: #3097D1;
-$brand-info: #8eb4cb;
-$brand-success: #2ab27b;
-$brand-warning: #cbb956;
-$brand-danger: #bf5329;
+$brand-primary:            #3097D1;
+$brand-info:               #8eb4cb;
+$brand-success:            #2ab27b;
+$brand-warning:            #cbb956;
+$brand-danger:             #bf5329;
 
 // Typography
 // $font-family-sans-serif: "Raleway", sans-serif;
 // $line-height-base: 1.6;
 // $text-color: #636b6f;
+
+// Options
+$enable-caret:             true;
+$enable-rounded:           false;
+$enable-shadows:           false;
+$enable-gradients:         false;
+$enable-transitions:       true;
+$enable-hover-media-query: false;
+$enable-grid-classes:      true;
+$enable-print-styles:      true;
