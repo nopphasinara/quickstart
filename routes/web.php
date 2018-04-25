@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::prefix('admin')->group(function () {
+  Route::get('/', function () {
+    return view('admin.dashboard');
+  });
+  Route::get('/login', function () {
+    return view('admin.login');
+  });
+});
+
 Route::get('/', function () {
     if (App::environment(['local', 'staging'])) {
         // The environment is either local OR staging...
