@@ -1,35 +1,45 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <title>Signin Template for Bootstrap</title>
+@extends('layouts.admin.app')
 
-    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
-  </head>
-
-  <body class="text-center justify-content-center d-flex flex-column">
-    <form class="form-signin">
-      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
+@section('content')
+  <div class="form-signin">
+    <form id="form-signin" action="{{ route('login') }}" method="POST" autocomplete="on">
+      {{ csrf_field() }}
+      <div class="logo text-center mb-2">
+        <img src="{{ asset('img/logo.png') }}" alt="Control Panel" width="75%" height="auto">
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      <h1 class="h3 font-weight-light text-center mb-4">Please sign in</h1>
+      @if ($errors->all())
+        <div class="alert alert-danger">
+          <ul class="my-0">
+            @foreach ($errors->all() as $index => $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+      <div class="form-body border rounded px-4 py-4">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" name="email" id="email" class="form-control" required>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-auto">
+            <a href="{{ route('password.reset', csrf_token()) }}">Forgot password?</a>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+        <div class="form-group form-check">
+          <label>
+            <input class="form-check-input" id="remember" name="remember" type="checkbox" value="true"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign me in</button>
+      </div>
     </form>
-  </body>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</html>
+  </div>
+@endsection

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Admin\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +16,14 @@ use Illuminate\Http\Request;
 
 
 Route::namespace('Admin')->group(function () {
-  Route::get('/', function (Request $request) {
-    return (auth()->check()) ? view('admin.dashboard') : redirect(route('admin.login'));
-  })->name('admin.dashboard');
+  Route::get('/', 'PageController@index')->name('admin.dashboard');
+  Route::get('/login', 'PageController@login')->name('admin.login');
 
-  Route::get('/login', function (Request $request) {
-    return (auth()->check()) ? view('admin.dashboard') : view('admin.login');
-  })->name('admin.login');
+  // Route::get('/{pagename}?', function (Request $request, $pagename) {
+  //   return (auth()->check()) ? view('admin.dashboard') : redirect(route('admin.login'));
+  // })->name('admin.dashboard');
+  //
+  // Route::get('/login', function (Request $request) {
+  //   return (auth()->check()) ? view('admin.dashboard') : view('admin.login');
+  // })->name('admin.login');
 });

@@ -5905,7 +5905,7 @@ button.bg-dark:focus {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, body.page-login {
   display: flex !important;
 }
 
@@ -6110,7 +6110,7 @@ button.bg-dark:focus {
   flex-direction: row !important;
 }
 
-.flex-column {
+.flex-column, body.page-login {
   flex-direction: column !important;
 }
 
@@ -6162,7 +6162,7 @@ button.bg-dark:focus {
   justify-content: flex-end !important;
 }
 
-.justify-content-center {
+.justify-content-center, body.page-login {
   justify-content: center !important;
 }
 
@@ -8437,34 +8437,135 @@ a.text-dark:hover, a.text-dark:focus {
 html,
 body {
   font-size: 14px;
-}
-
-body {
-  margin-top: 3.4rem;
+  color: #212529;
   background-color: #fff;
 }
 
-/* Carousel base class */
-.carousel {
-  margin-bottom: 4rem;
+html {
+  height: 100%;
 }
 
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+body.page-login {
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-/* Declare heights because of positioning of img element */
-.carousel-item {
-  height: 60rem;
-  background-color: #f8f9fa;
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 15px;
+  margin: 0 auto;
 }
 
-.carousel-item > img {
-  position: absolute;
+.form-signin .checkbox {
+  font-weight: normal;
+}
+
+.form-signin .form-control {
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.admin {
+  height: auto;
+  /*
+   * Sidebar
+   */
+  /*
+   * Navbar
+   */
+  /*
+   * Utilities
+   */
+}
+
+.admin body {
+  height: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: #fff;
+}
+
+.admin .feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.admin .sidebar {
+  z-index: 100;
+  position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  min-width: 100%;
-  height: 60rem;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.admin .sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.admin .sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.admin .sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.admin .sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.admin .sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px;
+  /* Height of navbar */
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.admin .navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.admin .navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.admin .form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin .form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.admin .border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.admin .border-bottom {
+  border-bottom: 1px solid #e5e5e5;
 }
