@@ -43,12 +43,9 @@ class PageController extends Controller
         return redirect(route('admin.login'));
       }
 
-      return view('admin.dashboard');
-    }
-
-    public function dashboard()
-    {
-      return view('admin.dashboard');
+      return view('admin.dashboard')->with([
+        'user' => Auth::user(),
+      ]);
     }
 
     public function login()

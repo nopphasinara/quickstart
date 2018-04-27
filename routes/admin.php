@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\PageController;
 Route::namespace('Admin')->group(function () {
   Route::get('/', 'PageController@index')->name('admin.dashboard');
   Route::get('/login', 'PageController@login')->name('admin.login');
+  Route::post('/login', '\App\Http\Controllers\Auth\LoginController@adminLogin')->name('admin.login');
 
   // Route::get('/{pagename}?', function (Request $request, $pagename) {
   //   return (auth()->check()) ? view('admin.dashboard') : redirect(route('admin.login'));

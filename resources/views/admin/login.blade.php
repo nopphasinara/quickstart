@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="form-signin">
-    <form id="form-signin" action="{{ route('login') }}" method="POST" autocomplete="on">
+    <form id="form-signin" action="{{ route('admin.login') }}" method="POST" autocomplete="on">
       {{ csrf_field() }}
       <div class="logo text-center mb-2">
         <img src="{{ asset('img/logo.png') }}" alt="Control Panel" width="75%" height="auto">
