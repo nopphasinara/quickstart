@@ -1,75 +1,35 @@
 <!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="{!! asset('lib/modular/css/vendor.css') !!}">
-        <link rel="stylesheet" id="theme-style" href="{!! asset('lib/modular/css/app.css') !!}">
-    </head>
-    <body>
-        <div class="auth">
-            <div class="auth-container">
-                <div class="card">
-                    <header class="auth-header">
-                        <h1 class="auth-title">
-                            <div class="logo">
-                                <span class="l l1"></span>
-                                <span class="l l2"></span>
-                                <span class="l l3"></span>
-                                <span class="l l4"></span>
-                                <span class="l l5"></span>
-                            </div> ModularAdmin </h1>
-                    </header>
-                    <div class="auth-content">
-                        <p class="text-center">LOGIN TO CONTINUE</p>
-                        <form id="login-form" action="/index.html" method="GET" novalidate="">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="email" class="form-control underlined" name="username" id="username" placeholder="Your email address" required> </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control underlined" name="password" id="password" placeholder="Your password" required> </div>
-                            <div class="form-group">
-                                <label for="remember">
-                                    <input class="checkbox" id="remember" type="checkbox">
-                                    <span>Remember me</span>
-                                </label>
-                                <a href="reset.html" class="forgot-btn pull-right">Forgot password?</a>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-block btn-primary">Login</button>
-                            </div>
-                            <div class="form-group">
-                                <p class="text-muted text-center">Do not have an account?
-                                    <a href="signup.html">Sign Up!</a>
-                                </p>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="index.html" class="btn btn-secondary btn-sm">
-                        <i class="fa fa-arrow-left"></i> Back to dashboard </a>
-                </div>
-            </div>
-        </div>
-        <!-- Reference block for JS -->
-        <div class="ref" id="ref">
-            <div class="color-primary"></div>
-            <div class="chart">
-                <div class="color-primary"></div>
-                <div class="color-secondary"></div>
-            </div>
-        </div>
-        {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script> --}}
-        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script> --}}
-        {{-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script> --}}
-        <script src="{!! asset('lib/modular/js/vendor.js') !!}"></script>
-        <script src="{!! asset('lib/modular/js/app.js') !!}"></script>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>Signin Template for Bootstrap</title>
+
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
+  </head>
+
+  <body class="text-center justify-content-center d-flex flex-column">
+    <form class="form-signin">
+      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+    </form>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </html>
