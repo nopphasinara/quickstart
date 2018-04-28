@@ -1,0 +1,12 @@
+// compileExpanded: ../../../public/css/$1.css
+
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+@import '../../../node_modules/bootstrap/scss/_functions.scss';
+@import "./_variables-admin.scss";
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
