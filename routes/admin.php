@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\PageController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,18 +11,7 @@ use App\Http\Controllers\Admin\PageController;
 |
 */
 
+Route::get('/', 'AdminController@index')->name('dashboard');
+Route::get('/login', 'AdminController@login')->name('login');
 
-
-Route::namespace('Admin')->group(function () {
-  Route::get('/', 'PageController@index')->name('admin.dashboard');
-  Route::get('/login', 'PageController@login')->name('admin.login');
-  Route::post('/login', '\App\Http\Controllers\Auth\LoginController@adminLogin')->name('admin.login');
-
-  // Route::get('/{pagename}?', function (Request $request, $pagename) {
-  //   return (auth()->check()) ? view('admin.dashboard') : redirect(route('admin.login'));
-  // })->name('admin.dashboard');
-  //
-  // Route::get('/login', function (Request $request) {
-  //   return (auth()->check()) ? view('admin.dashboard') : view('admin.login');
-  // })->name('admin.login');
-});
+Route::get('/listings', 'ListingController@index')->name('listings');

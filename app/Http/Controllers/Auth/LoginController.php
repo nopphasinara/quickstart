@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-use Auth;
-use Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -28,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -40,18 +38,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function adminLogin(Request $request)
+    /**
+     * Where to redirect users after login.
+     *
+     * @return Illuminate\Support\Facades\Redirect
+     */
+    protected function redirectTo()
     {
-      $request = Request::all();
-
-      if (Auth::attempt([
-        'email' => $request['email'],
-        'password' => $request['password'],
-      ])) {
-        return redirect(route('admin.dashboard'));
-      } else {
-        echo '<pre>'; print_r(Auth::failed()); echo '</pre>';
-        // return redirect(route('admin.login'))->withErrors();
-      }
+        return '/';
     }
 }

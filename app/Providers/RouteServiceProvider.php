@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::pattern('pagename', '[0-9a-zA-Z\-\_\.]+');
+        //
 
         parent::boot();
     }
@@ -37,25 +37,10 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapAdminRoutes();
         $this->mapWebRoutes();
+        $this->mapAdminRoutes();
 
         //
-    }
-
-    /**
-     * Define the "admin" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapAdminRoutes()
-    {
-        Route::prefix('admin')
-             ->middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/admin.php'));
     }
 
     /**
@@ -70,6 +55,23 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        // dd($this->namespace);
+        Route::prefix('admin')
+             ->middleware('web')
+             ->namespace('App\Admin\Controllers')
+             ->name('admin.')
+             ->group(base_path('routes/admin.php'));
     }
 
     /**
