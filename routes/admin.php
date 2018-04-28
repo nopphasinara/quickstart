@@ -11,14 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AdminController@index')->name('dashboard');
+Route::get('/login', 'AdminController@login')->name('login');
 
-// Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-//   Route::get('/', 'AdminController@index')->name('dashboard');
-//   Route::get('/login', 'AdminController@login')->name('login');
-// });
-
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/listings', 'ListingController@index')->name('listings');
