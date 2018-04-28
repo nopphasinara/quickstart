@@ -47,9 +47,4 @@ class LoginController extends Controller
     {
         return '/';
     }
-
-    protected function guard()
-    {
-      return Auth::guard('admin');
-    }
 }
