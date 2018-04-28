@@ -13,5 +13,7 @@
 
 Route::get('/', 'AdminController@index')->name('dashboard');
 Route::get('/login', 'AdminController@login')->name('login');
+// Route::post('/login', 'AdminController@authenticate')->name('authenticate');
+Route::get('/password/reset', 'AdminController@passwordReset')->name('password.reset');
 
 Route::get('/listings', 'ListingController@index')->name('listings');
