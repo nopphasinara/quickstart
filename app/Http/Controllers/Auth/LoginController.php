@@ -4,9 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -28,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -38,25 +35,5 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-    }
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @return Illuminate\Support\Facades\Redirect
-     */
-    protected function redirectTo()
-    {
-        // echo '<pre>'; print_r(request()->getSession()->all()); echo '</pre>';
-        // echo '<pre>'; print_r(request()->getSession()->previousUrl()); echo '</pre>';
-        // echo '<pre>'; print_r(request()->hasPreviousSession()); echo '</pre>';
-        // echo '<pre>'; print_r(get_class_methods(request()->getSession())); echo '</pre>';
-        // echo '<pre>'; print_r(get_class_methods(request())); echo '</pre>';
-        // dd($request);
-
-        $input = request()->all();
-        // echo '<pre>'; print_r($input); echo '</pre>';
-        // dd("");
-        return ($input['redirect_to']) ? $input['redirect_to'] : '/';
     }
 }
