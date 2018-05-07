@@ -28,10 +28,10 @@
             <div class="logo">
               xxx
             </div><!-- / .logo -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-main-inner" aria-controls="navbar-main-inner" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbar-main-inner">
               <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -127,9 +127,20 @@
     <div id="footer" role="footer">
       <div class="copyright">
         <div class="container">
-          <div class="row d-flex justify-content-between">
+          <div class="row d-flex text-center text-sm-left justify-content-between">
             <div class="col-sm-auto">
-              &copy; Copyrights 2018 {{ config('app.name') }}
+              <p>&copy; Copyrights 2018 {{ config('app.name') }}</p>
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="#">Link</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">Link</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">Link</a>
+                </li>
+              </ul>
             </div>
             <div class="col-sm-auto">
               xxx

@@ -6990,7 +6990,7 @@ button.bg-dark:focus {
   margin-right: 0.5rem !important;
 }
 
-.mb-2,
+.mb-2, #footer .copyright p,
 .my-2 {
   margin-bottom: 0.5rem !important;
 }
@@ -8541,6 +8541,15 @@ b,
 .strong,
 .bold {
   font-weight: 700;
+}
+
+.navbar .dropdown-menu {
+  color: #fff;
+  background-color: #6c757d;
+}
+
+#navbar-main-inner .navbar-nav > .nav-item > a {
+  text-transform: uppercase;
 }
 
 .carousel .carousel-indicators li {

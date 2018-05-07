@@ -20,11 +20,34 @@ a {
   cursor: pointer !important;
 }
 
+p {
+  @at-root #footer .copyright & {
+    @extend .mb-2;
+  }
+}
+
 strong,
 b,
 .strong,
 .bold {
   font-weight: $font-weight-bold;
+}
+
+.navbar {
+  .dropdown-menu {
+    color: $white;
+    background-color: $gray-600;
+  }
+}
+
+.navbar-nav {
+  @at-root #navbar-main-inner & {
+    > .nav-item {
+      > a {
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
 
