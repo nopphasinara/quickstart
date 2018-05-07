@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/{pagename?}', function () {
+Route::get('/', function () {
     // echo '<pre>'; print_r(URL::getRequest()->cookie()); echo '</pre>';
     // echo '<pre>'; print_r(URL::getRequest()->query()); echo '</pre>';
     // echo '<pre>'; print_r(URL::getRequest()->getUriForPath('')); echo '</pre>';
@@ -25,4 +25,6 @@ Route::get('/{pagename?}', function () {
     // echo '<pre>'; print_r(get_class_methods(URL::getRequest())); echo '</pre>';
     
     return view('welcome');
-});
+})->name('homepage');
+
+Route::get('login', '\App\Models\User\LoginController@authenticate');

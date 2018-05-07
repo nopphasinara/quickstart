@@ -1,14 +1,54 @@
+// compileExpanded: ../../../public/css/$1.css
+
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
-// Variables
-@import "variables";
+@import '../../../node_modules/bootstrap/scss/_functions.scss';
+@import './_variables.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+html,
+body {
+  font-size: 14px;
+  font-family: $font-family-base;
+  height: 100%;
+}
+
+a {
+  cursor: pointer !important;
+}
+
+strong,
+b,
+.strong,
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+
+.carousel {
+  .carousel-indicators {
+    li {
+      cursor: pointer !important;
+      height: 6px;
+    }
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    cursor: pointer !important;
+  }
+  
+  @at-root #slide-homepage & {
+    .carousel-item {
+      height: 60rem;
+    }
+  }
+}
+
+
+#slide-homepage {
+  background-color: $gray-600;
 }
