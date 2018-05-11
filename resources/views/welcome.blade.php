@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,15 +10,11 @@
     <title>Album example for Bootstrap</title>
     
     {{-- <link rel="icon" href="../../../../favicon.ico"> --}}
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_asset('google_fonts.open_sans') }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ get_asset('fontawesome') }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}" crossorigin="anonymous">
   </head>
-
   <body>
-
-    @if ($errors->any())
-      <pre><?php print_r($errors); ?></pre>
-    @endif
-    
     {{-- <img class="lazyload" src="https://scontent.fbkk2-3.fna.fbcdn.net/v/t1.0-9/31958767_177418146412512_1354849314718875648_o.jpg?_nc_cat=0&oh=57a12baca770222c5e4824cc47eb92aa&oe=5B8C2BD4" data-src="https://scontent.fbkk2-3.fna.fbcdn.net/v/t1.0-9/31958767_177418146412512_1354849314718875648_o.jpg?_nc_cat=0&oh=57a12baca770222c5e4824cc47eb92aa&oe=5B8C2BD4" width="765" height="574" data-srcset="small.jpg 480w, medium.jpg 640w, large.jpg 1024w" />
     <img class="lazyload" src="https://scontent.fbkk2-3.fna.fbcdn.net/v/t1.0-0/p480x480/31955922_1027554134058724_961709599243632640_o.jpg?_nc_cat=0&oh=bad4301ae5e56747134cd78935738859&oe=5B532740" data-src="https://scontent.fbkk2-3.fna.fbcdn.net/v/t1.0-9/31959869_1027554130725391_4164943028038926336_n.jpg?_nc_cat=0&oh=08e87fa2e52eca0f6fef44b4a5190ad4&oe=5B8AC637" width="765" height="574" data-srcset="small.jpg 480w, medium.jpg 640w, large.jpg 1024w" /> --}}
     
@@ -78,7 +74,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="holder.js/100px100p?random=yes&auto=yes" alt="First slide">
+            <img class="first-slide" data-src="holder.js/100px100p?random=yes&auto=yes" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>Example headline.</h1>
@@ -88,7 +84,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="holder.js/100px100p?random=yes&auto=yes" alt="Second slide">
+            <img class="second-slide" data-src="holder.js/100px100p?random=yes&auto=yes" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Another example headline.</h1>
@@ -98,7 +94,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="holder.js/100px100p?random=yes&auto=yes" alt="Third slide">
+            <img class="third-slide" data-src="holder.js/100px100p?random=yes&auto=yes" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
                 <h1>One more for good measure.</h1>
@@ -143,23 +139,28 @@
               </ul>
             </div>
             <div class="col-sm-auto">
-              xxx
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fab fa-fw fa-facebook"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div><!-- / .container -->
       </div><!-- / .copyright -->
     </div><!-- / #footer -->
     
-
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" crossorigin="anonymous"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.map" crossorigin="anonymous"></script> --}}
-    <script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/tooltip.js@1.2.0/dist/umd/tooltip.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.js" crossorigin="anonymous"></script>
+    <script src="{{ asset(config('custom.jquery.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script>
+    <script src="{{ asset(config('custom.holder.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script>
+    <script src="{{ asset(config('custom.ie.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script>
+    {{-- <script src="{{ asset(config('custom.tooltip.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script> --}}
+    {{-- <script src="{{ asset(config('custom.lazyload.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script> --}}
+    <script src="{{ asset(config('custom.bootstrap.'. config('custom.app_resource') .'')) }}" crossorigin="anonymous"></script>
     <script>
     $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
     
