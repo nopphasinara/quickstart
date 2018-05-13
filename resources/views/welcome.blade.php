@@ -144,6 +144,12 @@
                   <a href="#">
                     <i class="fab fa-fw fa-facebook"></i>
                   </a>
+                  <a href="#">
+                    <i class="fab fa-fw fa-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fab fa-fw fa-linkedin"></i>
+                  </a>
                 </li>
               </ul>
             </div>
