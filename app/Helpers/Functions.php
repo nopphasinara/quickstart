@@ -1,7 +1,8 @@
 <?php
 
 function custom($key = '') {
-    
+    if ($key) return config('custom.' . $key);
+    return config('custom');
 }
 
 function app_resource(): string {
