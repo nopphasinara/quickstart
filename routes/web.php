@@ -24,6 +24,10 @@ Route::get('/', function () {
     // echo '<pre>'; print_r(get_class_vars(get_class(URL::getRequest()))); echo '</pre>';
     // echo '<pre>'; print_r(get_class_methods(URL::getRequest())); echo '</pre>';
     
+    $ip = geoip($ip = null);
+    echo '<pre>'; print_r($ip->getLocation('172.104.189.62')); echo '</pre>';
+    echo '<pre>'; print_r(get_class_methods($ip)); echo '</pre>';
+    
     return view('welcome');
 })->name('homepage');
 
